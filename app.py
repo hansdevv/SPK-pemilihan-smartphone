@@ -33,7 +33,7 @@ def SAW():
 	hp = Smartphone(uri,username,password)
 	data = hp.show()
 	for dt in data:
-		st.write(dt['_id'])
+		st.write(dt)
 def WP():
 	pass
 
