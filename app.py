@@ -1,6 +1,8 @@
 import streamlit as st
 from PIL import Image
 from src.models.smartphone import Smartphone
+from src.views.saw import saw
+from src.views.wp import wp
 
 favIcon = Image.open('./src/assets/img/favicon.ico')
 
@@ -33,9 +35,11 @@ def SAW():
 	hp = Smartphone(uri,username,password)
 	data = hp.show()
 	for dt in data:
-		st.write(dt)
-def WP():
-	pass
+		st.table(dt)
+# def WP():
+# 	# pass
+# 	page = view.saw
+# 	return page
 
 # Define a function to handle page selection
 def main():
@@ -45,7 +49,8 @@ def main():
 	if selection == "SAW":
 		SAW()
 	elif selection == "WP":
-		WP()
+		# WP()
+		wp()
 
 if __name__ == '__main__':
 	main()
